@@ -1,0 +1,172 @@
+body {
+    font-size: 14px;
+    font-weight: normal;
+    font-family: Helvetica;
+    line-height: 1.5;
+    color: #333;
+}
+
+#menu {
+    position: fixed;
+    bottom: 70px;
+    left: 70px;
+    padding: 15px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+    z-index: 100;
+    a {
+        display: flex;
+        span {
+            display: block;
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            background-color: #333;
+            transition: 0.5s;
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+        }
+    }
+    &:hover { background-color: #333; }
+    &:hover span { background-color: #fff; }
+}
+
+#section1 {
+    .autocolor {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width :100%;
+        height: 40vh;
+        background-color: pink;
+        animation: changecolor 5s linear infinite, slideright 1s ease-in forwards, sizeup 1s ease-in 1s forwards;
+        // animation: ;
+    }
+    @keyframes changecolor {
+        0% { background-color: #ff6d70; }
+        20% { background-color:#f29d37;}
+        40% { background-color: #dc5284; }
+        60% { background-color: #963f6d; }
+        80% { background-color: #f4899a;;}
+        100% { background-color: #ff6d70; }
+    }
+    @keyframes slideright {
+        from { left: -100%; }
+        to { left: 0; }
+    }
+    @keyframes sizeup {
+        from { height: 40vh; }
+        to { height: 55vh; }
+    }
+    .logo {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translateX(-45%);
+        width: 900px;
+        height: 0;
+        overflow: hidden;
+        animation: logodisplay 0.5s ease-in 2s forwards;
+        img {
+            width: 800px;
+            height: auto;
+            position: absolute;
+            top: 140px;
+            left: 0;
+            animation: logodisplay2 0.5s linear 2s forwards;
+        }
+    }
+    @keyframes logodisplay {
+        from { height: 0; }
+        to { height: 140px;}
+    }
+    @keyframes logodisplay2 {
+        from { top: 140px; }
+        to { top: 0;}
+    }
+    .scrollstart {
+        width: 100%;
+        height: 200vh;
+        background-color: #ff6f61;
+        position: absolute;
+        top: 0;
+        left: 0;
+        > div {
+            &:nth-child(1) {
+                font-size: 350px;
+                font-weight: 700;
+                color: #fff;
+                line-height: 0.7;
+                position: sticky;
+                top: 45%;
+                left: 0;
+                transform: translateY(-100%);
+            }
+            &:nth-child(2) {
+                font-size: 350px;
+                font-weight: 700;
+                color: #fff;
+                line-height: 0.7;
+                position: sticky;
+                top: 45%;
+                left: 0;
+            }
+            &.livingcoral {
+                position: absolute;
+                top: 1200px;
+                left: 50%;
+                transform: translateX(-50%);
+                color: #fff;
+                line-height: 1;
+                .livingcoral-box {
+                    display: flex;
+                    margin-bottom: 40px;
+                    > div {
+                        width: 500px;
+                        height: 500px;
+                        border: 15px solid #fff;
+                        padding: 30px;
+                        position: relative;
+                        font-weight: 700;
+                        p {
+                            font-size: 70px;
+                        }
+                        div {
+                            font-size: 80px;
+                            display: flex;
+                            position: absolute;
+                            bottom: 30px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            img {
+                                width: 20px;
+                                height: 20px;
+                            }
+                        }
+                    }
+                    > p {
+                        padding-left: 10px;
+                        font-size: 22px;
+                    }
+                    
+                }
+                .livingcoral-text {
+                    margin-left: 30px;
+                    font-weight: 700;
+                    p {
+                        font-size: 100px;
+                    }
+                    span {
+                        font-size: 55px;
+                    }
+                }
+            }
+            
+        }
+    }
+}
