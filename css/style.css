@@ -6,6 +6,11 @@ body {
   color: #333;
 }
 
+.inner {
+  width: 1200px;
+  margin: 0 auto;
+}
+
 #menu {
   position: fixed;
   bottom: 70px;
@@ -53,6 +58,10 @@ body {
   background-color: #fff;
 }
 
+#section1 {
+  height: 300vh;
+}
+
 #section1 .autocolor {
   position: absolute;
   top: 0;
@@ -62,6 +71,7 @@ body {
   background-color: pink;
   -webkit-animation: changecolor 5s linear infinite, slideright 1s ease-in forwards, sizeup 1s ease-in 1s forwards;
           animation: changecolor 5s linear infinite, slideright 1s ease-in forwards, sizeup 1s ease-in 1s forwards;
+  z-index: 10;
 }
 
 @-webkit-keyframes changecolor {
@@ -144,12 +154,19 @@ body {
 
 #section1 .logo {
   position: absolute;
-  top: 60%;
+  top: 55vh;
+  width: 100%;
+  height: 245vh;
+}
+
+#section1 .logo div {
+  position: absolute;
+  top: 50px;
   left: 50%;
-  -webkit-transform: translateX(-45%);
-          transform: translateX(-45%);
   width: 900px;
   height: 0;
+  -webkit-transform: translateX(-45%);
+          transform: translateX(-45%);
   overflow: hidden;
   -webkit-animation: logodisplay 0.5s ease-in 2s forwards;
           animation: logodisplay 0.5s ease-in 2s forwards;
@@ -170,7 +187,7 @@ body {
     height: 0;
   }
   to {
-    height: 140px;
+    height: 170px;
   }
 }
 
@@ -179,7 +196,7 @@ body {
     height: 0;
   }
   to {
-    height: 140px;
+    height: 170px;
   }
 }
 
@@ -203,11 +220,13 @@ body {
 
 #section1 .scrollstart {
   width: 100%;
-  height: 200vh;
+  height: 40vh;
+  max-height: 300vh;
   background-color: #ff6f61;
   position: absolute;
   top: 0;
   left: 0;
+  overflow: hidden;
 }
 
 #section1 .scrollstart > div:nth-child(1) {
@@ -215,12 +234,11 @@ body {
   font-weight: 700;
   color: #fff;
   line-height: 0.7;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 45%;
-  left: 0;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
+  width: 100%;
 }
 
 #section1 .scrollstart > div:nth-child(2) {
@@ -228,15 +246,14 @@ body {
   font-weight: 700;
   color: #fff;
   line-height: 0.7;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 45%;
-  left: 0;
+  width: 100%;
 }
 
 #section1 .scrollstart > div.livingcoral {
   position: absolute;
-  top: 1200px;
+  top: 1700px;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -297,4 +314,179 @@ body {
 
 #section1 .scrollstart > div.livingcoral .livingcoral-text span {
   font-size: 55px;
+}
+
+#section2 > div.inner > div:nth-child(1) {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+#section2 > div.inner > div:nth-child(1) p {
+  position: absolute;
+  top: 60%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 36px;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#section2 > div.inner > div:nth-child(2) {
+  width: 100%;
+  height: 180px;
+  margin: 150px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+#section2 > div.inner > div:nth-child(2) p {
+  position: absolute;
+  bottom: 0;
+  left: -350px;
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 0.9;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#section2 > div.inner > div:nth-child(2) span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+#section2 .right-slide {
+  position: relative;
+  width: 100%;
+}
+
+#section2 .right-slide .background-box {
+  height: 250vh;
+}
+
+#section2 .right-slide .background-box .contents-box {
+  width: 100%;
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding: 80px 0 80px;
+}
+
+#section2 .right-slide .slide-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#section2 .right-slide .slide-box .lightgray-slide {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  background-color: #f0f0f0;
+  padding: 80px 50px 80px;
+}
+
+#section2 .right-slide .slide-box .darkgray-slide {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  background-color: #ccc;
+  padding: 80px 50px 80px;
+}
+
+#section2 .right-slide .slide-box .darkgray-slide p {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 180px;
+}
+
+#section2 .right-slide .slide-box .darkgray-slide span {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+  background-color: #333;
+}
+
+#section2 .right-slide .color-index {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#section2 .right-slide .color-index > p:nth-child(1) {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+#section2 .right-slide .color-index > p:nth-child(2) {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 150px;
+}
+
+#section2 .right-slide .color-index > div:nth-child(3) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 150px;
+}
+
+#section2 .right-slide .color-index > div:nth-child(3) p {
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+#section2 .right-slide .color-index > div:nth-child(3) p:nth-child(2) {
+  margin-left: 20px;
+  font-weight: 700;
+}
+
+#section2 .right-slide .color-index > div:nth-child(4) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#section2 .right-slide .color-index > div:nth-child(4) div {
+  height: 150px;
+  line-height: 150px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#section2 .right-slide .color-index > div:nth-child(4) div:nth-child(1) {
+  width: 350px;
+  background-color: #ff6f61;
+}
+
+#section2 .right-slide .color-index > div:nth-child(4) div:nth-child(2) {
+  width: 150px;
+  background-color: #333;
 }

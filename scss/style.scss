@@ -184,130 +184,145 @@ body {
 }
 
 #section2 {
-    >div {
+    > div.inner {
         > div {
             &:nth-child(1) {
-                display: flex;
-                align-items: center;
+                position: relative;
+                width: 100%;
                 height: 100vh;
                 p {
+                    position: absolute;
+                    top: 60%;
+                    left: 0;
+                    transform: translateY(-50%);
                     font-size: 36px;
+                    opacity: 0;
+                    transition: 0.5s;
                 }
             }
             &:nth-child(2) {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-end;
+                width: 100%;
+                height: 180px;
                 margin: 150px auto;
+                position: relative;
+                overflow: hidden;
                 p {
+                    position: absolute;
+                    bottom: 0;
+                    left: -350px;
                     font-size: 100px;
                     font-weight: 700;
                     line-height: 0.9;
+                    transition: 0.5s;
                 }
                 span {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
                     font-size: 20px;
                     font-weight: 500;
                 }
             }
-            &.right-slide {
-                position: relative;
-                width: 100%;
-                > div {
-                    &.background-box {
-                        height: 250vh;
-                        .contents-box {
-                            width: 100%;
-                            height: 100vh;
-                            position: sticky;
-                            top: 0;
-                            left: 0;
-                            padding: 50px 0 80px;
-                        }
+        }
+    }
+    .right-slide {
+        position: relative;
+        width: 100%;
+        .background-box {
+                height: 250vh;
+                .contents-box {
+                    width: 100%;
+                    height: 100vh;
+                    position: sticky;
+                    top: 0;
+                    left: 0;
+                    padding: 80px 0 80px;
+                }
+        }
+        .slide-box {
+                position: absolute;
+                left: 0;
+                width:100%;
+                height: 100vh;
+                overflow: hidden;
+                .lightgray-slide {
+                    width: 100%;
+                    height: 100vh;
+                    position: absolute;
+                    top: 0;
+                    background-color: #f0f0f0;
+                    padding: 80px 50px 80px;
+                }
+                .darkgray-slide {
+                    width: 100%;
+                    height: 100vh;
+                    position: absolute;
+                    top: 0;
+                    background-color: #ccc;
+                    padding: 80px 50px 80px;
+                    p {
+                        font-size: 20px;
+                        font-weight: 700;
+                        margin-bottom: 180px;
                     }
-                    &.slide-box {
-                        position: absolute;
-                        left: 0;
-                        width:100%;
-                        height: 100vh;
-                        overflow: hidden;
-                        .lightgray-slide {
-                            width: 100%;
-                            height: 100vh;
-                            position: absolute;
-                            top: 0;
-                            background-color: #f0f0f0;
-                            padding: 50px 50px 80px;
-                        }
-                        .darkgray-slide {
-                            width: 100%;
-                            height: 100vh;
-                            position: absolute;
-                            top: 0;
-                            background-color: #ccc;
-                            padding: 80px 50px 80px;
-                            p {
-                                font-size: 20px;
-                                font-weight: 700;
-                                margin-bottom: 180px;
-                            }
-                            span {
-                                display: block;
-                                width: 60px;
-                                height: 60px;
-                                border-radius: 50%;
-                                line-height: 50px;
-                                text-align: center;
-                                color: #fff;
-                                background-color: #333;
-                            }
+                    span {
+                        display: block;
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        line-height: 50px;
+                        text-align: center;
+                        color: #fff;
+                        background-color: #333;
+                    }
+                }
+        }
+        .color-index {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            > p {
+                &:nth-child(1) {
+                    font-size: 20px;
+                    font-weight: 500;
+                    margin-bottom: 20px;
+                }
+                &:nth-child(2) {
+                    font-size: 32px;
+                    font-weight: 700;
+                    margin-bottom: 150px;
+                }
+            }
+            > div {
+                &:nth-child(3) {
+                    display: flex;
+                    margin-bottom: 150px;
+                    p {
+                        font-size: 16px;
+                        line-height: 1.7;
+                        font-weight: 500;
+                        &:nth-child(2) {
+                            margin-left: 20px;
+                            font-weight: 700;
                         }
                     }
                 }
-                .color-index {
-                    > p {
+                &:nth-child(4) {
+                    display: flex;
+                    div {
+                        height: 150px;
+                        line-height: 150px;
+                        text-align: center;
+                        color: #fff;
+                        font-size: 20px;
+                        font-weight: 600;
                         &:nth-child(1) {
-                            font-size: 20px;
-                            font-weight: 500;
-                            margin-bottom: 20px;
+                            width: 350px;
+                            background-color: #ff6f61;
                         }
                         &:nth-child(2) {
-                            font-size: 32px;
-                            font-weight: 700;
-                            margin-bottom: 150px;
-                        }
-                    }
-                    > div {
-                        &:nth-child(3) {
-                            display: flex;
-                            margin-bottom: 150px;
-                            p {
-                                font-size: 16px;
-                                line-height: 1.7;
-                                font-weight: 500;
-                                &:nth-child(2) {
-                                    margin-left: 20px;
-                                    font-weight: 700;
-                                }
-                            }
-                        }
-                        &:nth-child(4) {
-                            display: flex;
-                            div {
-                                height: 150px;
-                                line-height: 150px;
-                                text-align: center;
-                                color: #fff;
-                                font-size: 20px;
-                                font-weight: 600;
-                                &:nth-child(1) {
-                                    width: 350px;
-                                    background-color: #ff6f61;
-                                }
-                                &:nth-child(2) {
-                                    width: 150px;
-                                    background-color: #333;
-                                }
-                            }
+                            width: 150px;
+                            background-color: #333;
                         }
                     }
                 }
