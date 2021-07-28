@@ -24,6 +24,9 @@ lightgraySlide.style.right = - 140 + '%';
 darkgraySlide.style.right = - 200 + '%';
 
 const section3 = document.querySelector('#section3');
+const section4 = document.querySelector('#section4');
+const section5 = document.querySelector('#section5');
+const section6 = document.querySelector('#section6');
 
 addEventListener('scroll', function () {
     const scrolltop = document.documentElement.scrollTop;
@@ -82,5 +85,41 @@ addEventListener('scroll', function () {
 
         fixedblock1.style.top = (scrolltop - (section3.offsetTop + 750)) + 900 + 'px';
         fixedblock2.style.top = (scrolltop - (section3.offsetTop + 750)) + 1350 + 'px';
+    }
+
+    if (scrolltop >= section4.offsetTop - 500) {
+        const socialmedia = document.querySelector('.socialmedia');
+        socialmedia.style.left = '0';
+    }
+    if (scrolltop >= section4.offsetTop + 1000) {
+        const fashion = document.querySelector('.fashion');
+        fashion.style.left = '0';
+    }
+
+    if (scrolltop >= section5.offsetTop - 500) {
+        const adobestock = document.querySelector('.adobestock');
+        adobestock.style.left = 0;
+        const textHidden = document.querySelector('.text-hidden');
+        textHidden.style.opacity = 1;
+        textHidden.style.top = '300px';
+    }
+    if (scrolltop >= section5.offsetTop + 1000) {
+        const cosmetic = document.querySelector('.cosmetic');
+        cosmetic.style.left = '0';
+    }
+    if (scrolltop >= section5.offsetTop + 1300) {
+        const cosImg = document.querySelector('.cosimg-bigger');
+        cosImg.style.width = 300 + (scrolltop - section5.offsetTop - 1300) / 5 + 'px';
+        if ((scrolltop - section5.offsetTop - 1300) / 5 > 300) {
+            cosImg.style.width = '600px';
+        }
+    }
+
+    if (scrolltop >= section6.offsetTop) {
+        const visualTextBox = document.querySelector('.visual div');
+        visualTextBox.style.top = scrolltop - section6.offsetTop + 'px';
+        visualTextBox.style.transform = `translateX(-${(scrolltop - section6.offsetTop) * 2.5}px)`;
+        // const visualText = document.querySelector('.visual div p');
+        // visualText.style.transform = `translateX(-${(scrolltop - section6.offsetTop) * 2.5}px)`;
     }
 })
