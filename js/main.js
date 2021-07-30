@@ -30,14 +30,13 @@ const section6 = document.querySelector('#section6');
 const section7 = document.querySelector('#section7');
 const section8 = document.querySelector('#section8');
 const section9 = document.querySelector('#section9');
+const section10 = document.querySelector('#section10');
 
 addEventListener('scroll', function () {
     const scrolltop = document.documentElement.scrollTop;
     scrollstart.style.height = scrstHeight + (scrolltop / 5) + 'vh';
     scrstSlide1.style.left = (scrolltop / 7) - scrstLeft + '%';
     scrstSlide2.style.left = - (scrolltop / 7) + scrstLeft + '%';
-
-
 
     if (scrolltop >= section2.offsetTop - this.window.innerHeight / 2) {
         const announce = document.querySelector('.pantone-announce p');
@@ -144,5 +143,16 @@ addEventListener('scroll', function () {
     const interImg = document.querySelector('.interimg-bigger');
     if (scrolltop >= section8.offsetTop + 700) {
         interImg.style.width = (scrolltop - section8.offsetTop - 700) / 5 + 400 + 'px';
+    }
+
+    const shoppantone = document.querySelector('.shoppantone');
+    const itemImg = document.querySelectorAll('.item-img');
+    const moreBox = document.querySelector('.more-box');
+    if (scrolltop >= section9.offsetTop - 700) {
+        shoppantone.style.left = '0';
+        itemImg.forEach(item => item.style.opacity = 1);
+    }
+    if (scrolltop >= section9.offsetTop + 500) {
+        moreBox.style.height = '150px';
     }
 })

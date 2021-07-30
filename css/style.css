@@ -1115,7 +1115,7 @@ body {
 
 #section9 {
   width: 100%;
-  height: 180vh;
+  height: 160vh;
   background-color: #f0f0f0;
 }
 
@@ -1131,8 +1131,10 @@ body {
   left: 0;
 }
 
-#section9 .bold-hidden .bold-subject {
-  left: 0;
+#section9 .shop-item .item-img {
+  opacity: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 #section9 .shop-item .item-description {
@@ -1149,6 +1151,12 @@ body {
   background-color: #333;
   color: #fff;
   font-weight: 600;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#section9 .shop-item .item-buy-btn:hover {
+  background-color: #f5df4d;
 }
 
 #section9 .item1 {
@@ -1252,4 +1260,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#section9 .buy-box div:nth-child(2):hover {
+  background-color: #f5df4d;
 }
