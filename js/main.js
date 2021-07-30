@@ -27,6 +27,9 @@ const section3 = document.querySelector('#section3');
 const section4 = document.querySelector('#section4');
 const section5 = document.querySelector('#section5');
 const section6 = document.querySelector('#section6');
+const section7 = document.querySelector('#section7');
+const section8 = document.querySelector('#section8');
+const section9 = document.querySelector('#section9');
 
 addEventListener('scroll', function () {
     const scrolltop = document.documentElement.scrollTop;
@@ -71,10 +74,10 @@ addEventListener('scroll', function () {
         colorpallet.style.left = '0';
     }
 
-    const colorblockL = document.querySelector('.go-left-block');
-    const colorblockR = document.querySelector('.go-right-block');
-    const fixedblock1 = document.querySelector('.fixed-block1');
-    const fixedblock2 = document.querySelector('.fixed-block2');
+    const colorblockL = document.querySelector('#section3 .go-left-block');
+    const colorblockR = document.querySelector('#section3 .go-right-block');
+    const fixedblock1 = document.querySelector('#section3 .fixed-block1');
+    const fixedblock2 = document.querySelector('#section3 .fixed-block2');
 
     if (scrolltop >= section3.offsetTop + 750 && scrolltop <= section3.offsetTop + 750 + this.window.innerWidth) {
         colorblockL.style.top = (scrolltop - (section3.offsetTop + 750)) + 'px';
@@ -115,11 +118,31 @@ addEventListener('scroll', function () {
         }
     }
 
-    if (scrolltop >= section6.offsetTop) {
+    if (scrolltop >= section6.offsetTop && scrolltop <= section6.offsetTop + 2000) {
         const visualTextBox = document.querySelector('.visual div');
         visualTextBox.style.top = scrolltop - section6.offsetTop + 'px';
-        visualTextBox.style.transform = `translateX(-${(scrolltop - section6.offsetTop) * 2.5}px)`;
-        // const visualText = document.querySelector('.visual div p');
-        // visualText.style.transform = `translateX(-${(scrolltop - section6.offsetTop) * 2.5}px)`;
+        const visualText = document.querySelector('.visual div p');
+        visualText.style.transform = `translateX(-${(scrolltop - section6.offsetTop) * 2.5}px)`;
+    }
+
+    const colorblockL2 = document.querySelector('#section7 .go-left-block');
+    const colorblockR2 = document.querySelector('#section7 .go-right-block');
+    const fixedblock3 = document.querySelector('#section7 .fixed-block1');
+    const fixedblock4 = document.querySelector('#section7 .fixed-block2');
+
+    if (scrolltop >= section7.offsetTop && scrolltop <= section7.offsetTop + this.window.innerWidth) {
+        colorblockL2.style.top = scrolltop - section7.offsetTop + 'px';
+        colorblockL2.style.left = -(scrolltop - section7.offsetTop) + 'px';
+
+        colorblockR2.style.top = scrolltop - section7.offsetTop + 450 + 'px';
+        colorblockR2.style.right = -(scrolltop - section7.offsetTop) + 'px';
+
+        fixedblock3.style.top = scrolltop - section7.offsetTop + 900 + 'px';
+        fixedblock4.style.top = scrolltop - section7.offsetTop + 1350 + 'px';
+    }
+
+    const interImg = document.querySelector('.interimg-bigger');
+    if (scrolltop >= section8.offsetTop + 700) {
+        interImg.style.width = (scrolltop - section8.offsetTop - 700) / 5 + 400 + 'px';
     }
 })
