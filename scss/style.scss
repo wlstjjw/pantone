@@ -7,7 +7,21 @@ body {
     font-weight: normal;
     font-family: Helvetica;
     line-height: 1.5;
-    color: #333;
+    color: black;
+    cursor: none;
+}
+.cursor {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    background: #fff;
+    mix-blend-mode: difference;
+    z-index: 200;
+    transition: 0.5s;
+    transition-property: transform;
 }
 .inner {
     width: 1200px;
@@ -23,7 +37,7 @@ body {
     transition: 0.8s;
 }
 
-#menu {
+.menu {
     position: fixed;
     bottom: 70px;
     left: 70px;
@@ -42,15 +56,28 @@ body {
             width: 17px;
             height: 17px;
             border-radius: 50%;
-            background-color: #333;
+            background-color: #000;
             transition: 0.5s;
             &:not(:last-child) {
                 margin-right: 10px;
             }
         }
     }
-    &:hover { background-color: #333; }
+    &:hover { background-color: #000; }
     &:hover span { background-color: #fff; }
+}
+.clickmenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: cadetblue;
+    z-index: 100;
+    display: none;
+}
+section {
+    background: #fff;
 }
 
 #section1 {
@@ -277,6 +304,9 @@ body {
                         text-align: center;
                         color: #fff;
                         background-color: #333;
+                        &:hover {
+                            background: #ff6f61;
+                        }
                     }
                 }
         }
@@ -321,14 +351,14 @@ body {
                         font-weight: 600;
                         &:nth-child(1) {
                             width: 350px;
-                            background-color: #ff6f61;
+                            background-color: #f5df4d;
                         }
                         &:nth-child(2) {
                             width: 150px;
                             background-color: #333;
                             transition: 0.5s;
                             &:hover {
-                                background-color: #ff6f61;
+                                background-color: #f5df4d;
                             }
                         }
                     }
@@ -841,12 +871,12 @@ body {
             line-height: 60px;
             text-align: center;
             border-radius: 50%;
-            background-color: #333;
+            background-color: black;
             color: #fff;
             font-weight: 600;
-            transition: 0.5s;
             &:hover {
                 background-color: #f5df4d;
+                color: black;
             }
         }
     }

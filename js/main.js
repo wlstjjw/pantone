@@ -1,3 +1,19 @@
+const cursor = document.querySelector('.cursor');
+window.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+})
+const hover = document.querySelectorAll('.hover');
+hover.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'scale(12)';
+    })
+    item.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'scale(1)';
+    })
+});
+
+
 const scrollstart = document.querySelector('.scrollstart');
 const scrstSlide1 = document.querySelector('.scrstart-slide1');
 const scrstSlide2 = document.querySelector('.scrstart-slide2');
