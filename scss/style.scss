@@ -354,10 +354,9 @@ body {
     }
     .color-block{
         width: 100%;
-        height: 3200px;
+        height: 3000px;
         position: relative;
         overflow: hidden;
-        background-color: lawngreen;
         .go-left-block {
             width: 3200px;
             background : url(/img/color-block-left.svg) top left / cover no-repeat;
@@ -373,18 +372,45 @@ body {
             }
             &.moveafter {
                 position: absolute;
-                bottom: 1350px;
+                top: 1200px;
             }
         }
         .go-right-block {
             width: 3200px;
             background : url(/img/color-block-right.svg) top left / cover no-repeat;
             height: 450px;
+            &.movebefore {
+                position: absolute;
+                top: 450px;
+                right: 0;
+            }
+            &.move {
+                position: fixed;
+                top: 450px;
+            }
+            &.moveafter {
+                position: absolute;
+                top: 1650px;
+            }
         }
         .fixed-block {
             width: 100%;
             height: 900px;
-            background: url(/img/fixed-block.svg) top left/cover no-repeat;
+            background: url(/img/fixed-block.svg) center center / cover no-repeat;
+            &.movebefore {
+                position: absolute;
+                top: 900px;
+                left: 0;
+            }
+            &.move {
+                position: fixed;
+                top: 900px;
+                left: 0;
+            }
+            &.moveafter {
+                position: absolute;
+                top: 2100px;
+            }
         }
     }
 }
@@ -534,7 +560,6 @@ body {
             position: absolute;
             top: 600px;
             left: 600px;
-            background-color: pink;
             width: 50%;
             height: 1500px;
             p {
@@ -546,7 +571,6 @@ body {
             div {
                 width: 50%;
                 height: 1200px;
-                background-color: rgba(0,0,0,0.3);
                 position: absolute;
                 top: 20%;
                 left: 0;
@@ -581,7 +605,6 @@ body {
         width: 100%;
         height: 300vh;
         position: relative;
-        background-color: purple;
         img {
             width: 100%;
             height: auto;
@@ -668,95 +691,62 @@ body {
 #section7 {
     .color-block{
         width: 100%;
-        height: 375vh;
+        height: 3000px;
         position: relative;
         overflow: hidden;
         .go-left-block {
-            width: 200%;
-            display: flex;
+            width: 3200px;
+            background : url(/img/color-block-left.svg) top left / cover no-repeat;
             height: 450px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            div {
-                &:nth-child(1) {
-                    width: 18%;
-                    background-color: #333;
-                }
-                &:nth-child(2) {
-                    width: 32%;
-                    background-color: #939597;
-                }
-                &:nth-child(3) {
-                    width: 16%;
-                    background-color: #838471;
-                }
-                &:nth-child(4) {
-                    width: 34%;
-                    background-color: #f5df4d;
-                }
+            &.movebefore {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            &.move {
+                position: fixed;
+                top: 0;
+            }
+            &.moveafter {
+                position: absolute;
+                top: 1200px;
             }
         }
         .go-right-block {
-            width: 200%;
-            display: flex;
+            width: 3200px;
+            background : url(/img/color-block-right.svg) top left / cover no-repeat;
             height: 450px;
-            position: absolute;
-            top: 450px;
-            right: 0;
-            div {
-                &:nth-child(1) {
-                    width: 32%;
-                    background-color: #758e72;
-                }
-                &:nth-child(2) {
-                    width: 18%;
-                    background-color: #af3738;
-                }
-                &:nth-child(3) {
-                    width: 34%;
-                    background-color: #fff;
-                }
-                &:nth-child(4) {
-                    width: 16%;
-                    background-color: #333;
-                }
+            &.movebefore {
+                position: absolute;
+                top: 450px;
+                right: 0;
+            }
+            &.move {
+                position: fixed;
+                top: 450px;
+            }
+            &.moveafter {
+                position: absolute;
+                top: 1650px;
             }
         }
-        .fixed-block1 {
+        .fixed-block {
             width: 100%;
-            height: 450px;
-            display: flex;
-            position: absolute;
-            top: 900px;
-            left: 0;
-            div {
-                &:nth-child(1) {
-                    width: 30%;
-                    background-color: #cdc48d;
-                }
-                &:nth-child(2) {
-                    width: 70%;
-                    background-color: #373947;
-                }
+            height: 900px;
+            background: url(/img/fixed-block.svg) center center / cover no-repeat;
+            &.movebefore {
+                position: absolute;
+                top: 900px;
+                left: 0;
             }
-        }
-        .fixed-block2 {
-            width: 100%;
-            height: 450px;
-            display: flex;
-            position: absolute;
-            top: 1350px;
-            left: 0;
-            div {
-                &:nth-child(1) {
-                    width: 70%;
-                    background-color: #774d53;
-                }
-                &:nth-child(2) {
-                    width: 30%;
-                    background-color: #939597;
-                }
+            &.move {
+                position: fixed;
+                top: 900px;
+                left: 0;
+            }
+            &.moveafter {
+                position: absolute;
+                top: 2100px;
             }
         }
     }
@@ -810,7 +800,6 @@ body {
         .sticky-box {
             width: 600px;
             height: 1600px;
-            background-color: lightseagreen;
             position: absolute;
             top: 700px;
             left: 600px;
