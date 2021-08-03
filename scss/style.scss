@@ -233,6 +233,7 @@ body {
     .right-slide {
         position: relative;
         width: 100%;
+        height: 400vh;
         .background-box {
                 height: 400vh;
                 .bg-color-index {
@@ -248,22 +249,18 @@ body {
                 position: absolute;
                 top: 0;
                 right: 0;
-                width:50%;
-                height: 100vh;
+                width: 50%;
+                height: inherit;
                 overflow: hidden;
                 .lightgray-slide {
                     width: 100%;
                     height: 100vh;
-                    position: absolute;
-                    top: 0;
                     background-color: #f0f0f0;
                     padding: 80px 50px 80px;
                 }
                 .darkgray-slide {
                     width: 100%;
                     height: 100vh;
-                    position: absolute;
-                    top: 0;
                     background-color: #ddd;
                     padding: 80px 50px 80px;
                     p {
@@ -357,96 +354,37 @@ body {
     }
     .color-block{
         width: 100%;
-        height: 380vh;
+        height: 3200px;
         position: relative;
         overflow: hidden;
+        background-color: lawngreen;
         .go-left-block {
-            width: 200%;
-            display: flex;
+            width: 3200px;
+            background : url(/img/color-block-left.svg) top left / cover no-repeat;
             height: 450px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            div {
-                &:nth-child(1) {
-                    width: 18%;
-                    background-color: #333;
-                }
-                &:nth-child(2) {
-                    width: 32%;
-                    background-color: #ff6f61;
-                }
-                &:nth-child(3) {
-                    width: 16%;
-                    background-color: #f4899a;
-                }
-                &:nth-child(4) {
-                    width: 34%;
-                    background-color: #dc5284;
-                }
+            &.movebefore {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            &.move {
+                position: fixed;
+                top: 0;
+            }
+            &.moveafter {
+                position: absolute;
+                bottom: 1350px;
             }
         }
         .go-right-block {
-            width: 200%;
-            display: flex;
+            width: 3200px;
+            background : url(/img/color-block-right.svg) top left / cover no-repeat;
             height: 450px;
-            position: absolute;
-            top: 450px;
-            right: 0;
-            div {
-                &:nth-child(1) {
-                    width: 32%;
-                    background-color: #e07aa4;
-                }
-                &:nth-child(2) {
-                    width: 18%;
-                    background-color: #963f6d;
-                }
-                &:nth-child(3) {
-                    width: 34%;
-                    background-color: #fff;
-                }
-                &:nth-child(4) {
-                    width: 16%;
-                    background-color: #333;
-                }
-            }
         }
-        .fixed-block1 {
+        .fixed-block {
             width: 100%;
-            height: 450px;
-            display: flex;
-            position: absolute;
-            top: 900px;
-            left: 0;
-            div {
-                &:nth-child(1) {
-                    width: 30%;
-                    background-color: #f29d37;
-                }
-                &:nth-child(2) {
-                    width: 70%;
-                    background-color: #f59f6a;
-                }
-            }
-        }
-        .fixed-block2 {
-            width: 100%;
-            height: 450px;
-            display: flex;
-            position: absolute;
-            top: 1350px;
-            left: 0;
-            div {
-                &:nth-child(1) {
-                    width: 70%;
-                    background-color: #d2b798;
-                }
-                &:nth-child(2) {
-                    width: 30%;
-                    background-color: #ff6f61;
-                }
-            }
+            height: 900px;
+            background: url(/img/fixed-block.svg) top left/cover no-repeat;
         }
     }
 }

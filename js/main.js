@@ -38,6 +38,7 @@ addEventListener('scroll', function () {
     scrstSlide1.style.left = (scrolltop / 7) - scrstLeft + '%';
     scrstSlide2.style.left = - (scrolltop / 7) + scrstLeft + '%';
 
+    //section2 시작
     if (scrolltop >= section2.offsetTop - this.window.innerHeight / 2) {
         const announce = document.querySelector('.pantone-announce p');
         announce.style.top = '50%';
@@ -49,44 +50,90 @@ addEventListener('scroll', function () {
         colorvalue.style.left = '0';
     }
 
+    //스크롤 할때 회색 슬라이드가 오른쪽에서 나오도록
+
+    lightgraySlide.style.position ='absolute';
+    lightgraySlide.style.right = 100 + '%';
+    darkgraySlide.style.position ='absolute';
+    darkgraySlide.style.right = 100 + '%';
+
 
     if (scrolltop >= rightSlide.offsetTop && scrolltop < section3.offsetTop - this.window.innerHeight) {
-        slideBox.style.top = scrolltop - rightSlide.offsetTop + 'px';
-
+        
         let ligrayRight = ((scrolltop - rightSlide.offsetTop) / 10) - 140;
+        lightgraySlide.style.position ="fixed";
+        lightgraySlide.style.bottom = "0";
         lightgraySlide.style.right = ligrayRight + '%';
 
-        if (ligrayRight >= 0) {
-            lightgraySlide.style.right = 0 + '%';
+
+        if (ligrayRight >= -50) {
+            lightgraySlide.style.right = -50 + '%'; 
 
             let dkgrayRight = (scrolltop - rightSlide.offsetTop) / 15 - 200;
+            darkgraySlide.style.position ="fixed";
+            darkgraySlide.style.bottom = "0";
             darkgraySlide.style.right = dkgrayRight + '%';
 
-            if (dkgrayRight >= -40) {
-                darkgraySlide.style.right = -40 + '%';
+            if (dkgrayRight >= -75) {
+                darkgraySlide.style.right = -75 + '%';
             }
+            
         }
+    }
+    //회색슬라이드가 정해진 영역까지 다 나왔을 때, 스크롤 해도 더 이상 위치가 변하지 않도록 고정
+    if (scrolltop >= section3.offsetTop - this.window.innerHeight) {
+        lightgraySlide.style.position = "absolute";
+        lightgraySlide.style.right = 0 + '%';
+
+        darkgraySlide.style.position ="absolute";
+        darkgraySlide.style.right = -50 + '%';
     }
 
     if (scrolltop >= section3.offsetTop - 500) {
         const colorpallet = document.querySelector('.colorpallet');
         colorpallet.style.left = '0';
     }
+    //section2 끝
 
+
+    //section3 시작
+    //컬러 블록이 스크롤 할 때 왼쪽과 오른쪽으로 움직이도록
     const colorblockL = document.querySelector('#section3 .go-left-block');
     const colorblockR = document.querySelector('#section3 .go-right-block');
-    const fixedblock1 = document.querySelector('#section3 .fixed-block1');
-    const fixedblock2 = document.querySelector('#section3 .fixed-block2');
+    const fixedblock = document.querySelector('#section3 .fixed-block');
+    
 
-    if (scrolltop >= section3.offsetTop + 750 && scrolltop <= section3.offsetTop + 750 + this.window.innerWidth) {
-        colorblockL.style.top = (scrolltop - (section3.offsetTop + 750)) + 'px';
-        colorblockR.style.top = (scrolltop - (section3.offsetTop + 750)) + 450 + 'px';
+    colorblockR.style.position = 'absolute';
+    colorblockR.style.top = 450 + 'px';
+    colorblockR.style.right = 0 + '%';
 
+    fixedblock.style.position = 'absolute';
+    fixedblock.style.top = '900px';
+    fixedblock.style.left = 0;
+
+
+    if (scrolltop >= section3.offsetTop + 750 && scrolltop < section3.offsetTop + 750 + 1600) {
+        colorblockL.style.position = 'fixed';
+        colorblockL.style.top = 0 + 'px';
         colorblockL.style.left = - (scrolltop - (section3.offsetTop + 750)) + 'px';
+
+        colorblockR.style.position = 'fixed';
+        colorblockR.style.top = 450 + 'px';
         colorblockR.style.right = - (scrolltop - (section3.offsetTop + 750)) + 'px';
 
-        fixedblock1.style.top = (scrolltop - (section3.offsetTop + 750)) + 900 + 'px';
-        fixedblock2.style.top = (scrolltop - (section3.offsetTop + 750)) + 1350 + 'px';
+        fixedblock.style.position = 'fixed';
+        fixedblock.style.top = '900px';
+    }
+
+    console.log(scrolltop, section3.offsetTop + 750 + 1600)
+    if (scrolltop >= section3.offsetTop + 750 + 1600) {
+        colorblockL.style.position = 'absolute';
+        colorblockL.style.bottom = 450 + 'px';
+        colorblockL.style.left = -100 + '%';
+
+        colorblockR.style.position = 'absolute';
+        colorblockR.style.bottom = 0 + 'px';
+        colorblockR.style.right = -100 + '%';
     }
 
     if (scrolltop >= section4.offsetTop - 500) {
