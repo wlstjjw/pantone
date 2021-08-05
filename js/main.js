@@ -13,6 +13,17 @@ hover.forEach(item => {
     })
 });
 
+const menu = document.querySelector('.menu');
+const clickmenu = document.querySelector('.clickmenu');
+const closebtn = document.querySelector('.closebtn');
+menu.addEventListener('click', (e) => {
+    e.preventDefault();
+    clickmenu.style.display = 'block';
+})
+closebtn.addEventListener('click', () => {
+    clickmenu.style.display = 'none';
+})
+
 
 const scrollstart = document.querySelector('.scrollstart');
 const scrstSlide1 = document.querySelector('.scrstart-slide1');
@@ -252,6 +263,9 @@ addEventListener('scroll', function () {
     const interImg = document.querySelector('.interimg-bigger');
     if (scrolltop >= section8.offsetTop + 700) {
         interImg.style.width = (scrolltop - section8.offsetTop - 700) / 5 + 400 + 'px';
+        if ((scrolltop - section8.offsetTop - 700) / 5 + 400 >= 600) {
+            interImg.style.width = 600 + 'px';
+        }
     }
     //section8 끝
 
